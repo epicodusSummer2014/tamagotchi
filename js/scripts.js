@@ -30,6 +30,18 @@ $('document').ready(function(){
     var newTamo = Object.create(Tamagotchi);
     newTamo.initialize();
     newTamo.name = $("#new-name").val();
+    if(newTamo.isAlive==="false"){
+      console.log("dead")
+    }
+
+    var count= 10;
+    var counter = setInterval(timer,1000);
+    function timer() {
+      count-=1;
+      if(count!= 0){
+        newTamo.timePasses();
+      }
+    }
 
    // timeoutID = window.setTimeout(timePasses, 5000);
 
